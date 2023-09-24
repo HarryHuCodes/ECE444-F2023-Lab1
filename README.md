@@ -10,3 +10,7 @@ Screenshot showing the activation of virtual environment (venv) in the directory
 Activity 2 (Dynamic Routes)
 ![helloharryhu](screenshot_assets/image.png)
 Screenshot demonstrating successful dynamic route to /user/< name > where client is presented with personalized greeting
+
+Activity 3 (Templates, Context, Bootstrap, Moment)
+![hello_harry_and_world](screenshot_assets/activity3.JPG)
+Screenshot showing the addition of NavBar, dynamic/static route greeting, and timestamp in 'LLLL' format. This was done using templates, flask-bootstrap, and flask-moment. Additionally, custom error pages were added for 401 'Page Not Found' and 500 'Server error' with the help of error handlers that prompts jinja2 to render custom html template files.
