@@ -14,3 +14,13 @@ Screenshot demonstrating successful dynamic route to /user/< name > where client
 Activity 3 (Templates, Context, Bootstrap, Moment)
 ![hello_harry_and_world](screenshot_assets/activity3.JPG)
 Screenshot showing the addition of NavBar, dynamic/static route greeting, and timestamp in 'LLLL' format. These were done using templates, flask-bootstrap, and flask-moment. Additionally, custom error pages were added for 401 'Page Not Found' and 500 'Server error' with the help of error handlers that prompts jinja2 to render custom html template files.
+
+Activity 4 (Forms, Sessions, Redirect, Flash, Validation)
+![webform_page](screenshot_assets/Activity4s1.png)
+Screenshot presenting the basic webpage with 2 fields (name and email) along with a submit button made using Flask-WTF extension.
+![successful_submit](screenshot_assets/Activity4s2.png)
+After a successful submission to the webform with a valid UofT email and an entry for name, the information on the page is then updated with new fields and personalized greeting 
+![unsuccessful_submit](screenshot_assets/Activity4s3.png)
+An unsuccessful submission with invalid entry would trigger the following message as a result of validators=[ Email() ]. Similarly, if name field is left empty, we would also get an error due to validators=[ DataRequired() ].
+![non_uoft_email](screenshot_assets/Activity4s4.png)
+When user enters a valid email that is not from UofT and full name that does not match what was saved in user sessions, we receive the following update to the pages along with 2 flash messages.
