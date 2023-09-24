@@ -3,8 +3,8 @@ from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from datetime import datetime 
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired, ValidationError
+from wtforms import StringField, SubmitField, EmailField
+from wtforms.validators import DataRequired, ValidationError, Email
 
 app = Flask(__name__)
 #application instance created as an object of Flask library
@@ -18,8 +18,9 @@ app.config['SECRET_KEY'] = 'hard to guess string'
 
 class NameForm(FlaskForm):
     name = StringField('What is your name?', validators=[DataRequired()])
+    email = StringField('What is your UofT Email address?', validators=[Email()])
     submit = SubmitField('Submit')
-
+    
 
 #------------------------------ Custom Error Pages ------------------------------
 @app.errorhandler(404)
@@ -37,11 +38,17 @@ def index(): #view function index
     form = NameForm()
     if form.validate_on_submit():
         old_name = session.get('name')
+        old_email = session.get('email')
+
         if old_name is not None and old_name != form.name.data:   #name mismatch
             flash('Looks like you have changed your name!')       #inform user by message flashing
-        session['name'] = form.name.data                      #name stored in user session so that it is remembered beyond the request
+        if old_email is not None and old_email != form.name.data: #email mismatch from session
+            flash('Looks like you have changed your email!')      #inform user by message flashing
+        
+        session['name'] = form.name.data                          #name stored in user session so that it is remembered beyond the request
+        session['email'] = form.email.data                        #email stored in user session so that it can be remembered beyond the request
         return redirect(url_for('index'))                         #respond to POST requests through a redirect
-    return render_template('index.html', form=form, name=session.get('name'))
+    return render_template('index.html', form=form, name=session.get('name'), email=session.get('email'))
 
 @app.route('/user/<name>')                                                          #dynamic route decorator
 def user(name):                                                                     #view function for name specified in url 
