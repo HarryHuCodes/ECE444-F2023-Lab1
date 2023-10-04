@@ -18,3 +18,8 @@ From the local repository of lab1 flask, a new branch was created for this lab -
 
 Screenshot of 'Docker Version' in windows command terminal - showing the successful installation of Docker
 
+# Activity 3
+
+![locally_hellodocker](screenshot_assets/lab3/lab3activity3.JPG)
+
+Screenshot of the application running locally after changing title to "Hello [your name]! Welcome to Lab3 Docker!". This is to ensure the code base works well before dokerizing it. 
