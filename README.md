@@ -23,3 +23,18 @@ Screenshot of 'Docker Version' in windows command terminal - showing the success
 ![locally_hellodocker](screenshot_assets/lab3/lab3activity3.JPG)
 
 Screenshot of the application running locally after changing title to "Hello [your name]! Welcome to Lab3 Docker!". This is to ensure the code base works well before dokerizing it. 
+
+# Activity 4
+
+![docker_build_psa_](screenshot_assets/lab3activity4p1.JPG)
+
+- Built and ran docker images with the docker commands above 
+- Reinstalled python dependencies in Docker through Dockerfile and copying from requirements.txt
+
+![docker_ps-a_outcome](screenshot_assets/lab3activity4p2.JPG)
+
+Screenshot showing container successfully running. The log information indicates the running application after the 'docker ps -a' command.
+
+![app_running_localhost](screenshot_assets/lab3screenshotp5.JPG)
+
+Screenshot showing application running on http://localhost:5000 at the time that it was taken. 
